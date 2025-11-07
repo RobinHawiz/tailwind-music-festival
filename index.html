@@ -20,11 +20,18 @@
     <title>Tailwind Music Festival</title>
   </head>
   <body>
-    <main>
-      <header class="text-zinc-200">
-        <nav
-          class="sticky top-0 z-50 flex bg-linear-to-r from-rose-500 to-pink-500"
+    <main class="bg-zinc-200 dark:bg-zinc-900">
+      <header class="sticky top-0 z-10 text-zinc-200">
+        <button
+          id="dark-mode-toggle"
+          class="fixed top-24 right-0 h-12 w-12 cursor-pointer rounded-l-lg bg-zinc-900 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
         >
+          <span class="dark:hidden"><i class="fa-solid fa-sun"></i></span>
+          <span class="hidden dark:block"
+            ><i class="fa-solid fa-moon"></i
+          ></span>
+        </button>
+        <nav class="flex bg-linear-to-r from-rose-500 to-pink-500">
           <div class="flex items-center gap-2 p-2">
             <img
               src="./assets/images/logo-inverted.png"
@@ -148,9 +155,9 @@
               </div>
             </div>
           </div>
-          <div class="text-5xl font-bold">
+          <h1 class="text-5xl font-bold">
             tw:<span class="text-sky-900">mf</span>
-          </div>
+          </h1>
         </div>
         <p class="mt-3 text-sm font-bold">
           Keep me updated with news and promotions
@@ -168,7 +175,7 @@
           </button>
         </form>
       </section>
-      <section class="mx-auto mt-20 max-w-5xl">
+      <section class="mx-auto mt-20 max-w-5xl text-zinc-900 dark:text-zinc-200">
         <h2>Headliners</h2>
         <p>
           Experience the sonic delight from these made-up artists across 7 days
@@ -176,9 +183,9 @@
           year"
         </p>
         <div class="flex">
-          <div id="previous" class="flex-center cursor-pointer p-2 text-5xl">
+          <button id="previous" class="flex-center cursor-pointer p-2 text-5xl">
             <i class="fas fa-angle-left"></i>
-          </div>
+          </button>
           <div
             id="carousel"
             class="mt-5 flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-5"
@@ -233,9 +240,9 @@
               <h6>7th July 10:30pm - Main Stage</h6>
             </article>
           </div>
-          <div id="next" class="flex-center cursor-pointer p-2 text-5xl">
+          <button id="next" class="flex-center cursor-pointer p-2 text-5xl">
             <i class="fas fa-angle-right"></i>
-          </div>
+          </button>
         </div>
       </section>
     </main>

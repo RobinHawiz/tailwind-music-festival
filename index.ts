@@ -11,6 +11,14 @@ window.onload = () => {
     ticketMenuButton.classList.toggle("open");
   });
 
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark");
+  }
+  darkModeToggle?.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+
   const previousButton = document.getElementById("previous")!;
   const nextButton = document.getElementById("next")!;
   const carousel = document.getElementById("carousel")!;
