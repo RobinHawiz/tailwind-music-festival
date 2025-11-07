@@ -12,11 +12,9 @@ window.onload = () => {
   });
 
   const darkModeToggle = document.getElementById("dark-mode-toggle");
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.body.classList.add("dark");
-  }
+  const html = document.querySelector("html");
   darkModeToggle?.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    html?.classList.toggle("dark");
   });
 
   const previousButton = document.getElementById("previous")!;

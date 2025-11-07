@@ -2,6 +2,11 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector("html").classList.add("dark");
+      }
+    </script>
     <!-- Makes the loading of google fonts non-render blocking -->
     <link
       rel="preload"
