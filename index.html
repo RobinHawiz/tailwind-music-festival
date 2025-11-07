@@ -1,12 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind Music Festival</title>
   </head>
   <body>
+    <main>
+      <header class="text-zinc-200">
+        <nav
+          class="sticky top-0 z-50 flex bg-linear-to-r from-rose-500 to-pink-500"
+        >
+          <div class="flex items-center gap-2 p-2">
+            <img
+              src="./assets/images/logo-inverted.png"
+              width="50"
+              alt="logo"
+            />
+            <div class="text-2xl font-bold">
+              tw:<span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <button
+            id="mobile-menu-button"
+            class="group peer my-auto mr-4 ml-auto block cursor-pointer md:hidden"
+          >
+            <span
+              class="relative top-0 block h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"
+            ></span>
+            <span
+              class="mt-1 block h-1 w-8 rounded-full bg-zinc-200 opacity-100 transition-all group-open:opacity-0"
+            ></span>
+            <span
+              class="relative top-0 mt-1 block h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"
+            ></span>
+          </button>
+          <ul
+            class="absolute top-full left-0 hidden w-full bg-linear-to-r from-rose-500 to-pink-500 peer-open:block"
+          >
+            <li
+              class="flex-center cursor-pointer p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+            >
+              Home
+            </li>
+            <li
+              class="flex-center cursor-pointer p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+            >
+              Lineup
+            </li>
+            <li
+              class="flex-col text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+            >
+              <button
+                id="ticket-menu-button"
+                class="peer w-full cursor-pointer p-4 text-center font-bold"
+              >
+                Tickets
+              </button>
+              <ul class="hidden w-full text-center peer-open:block">
+                <li
+                  class="cursor-pointer p-4 text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  Single day ticket
+                </li>
+                <li
+                  class="relative cursor-pointer p-4 text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  7 day ticket
+                </li>
+              </ul>
+            </li>
+            <li
+              class="flex-center cursor-pointer p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+            >
+              Support
+            </li>
+          </ul>
+          <ul class="hidden flex-1 items-center justify-end md:flex">
+            <li class="menu-item">Home</li>
+            <li class="menu-item">Lineup</li>
+            <li class="menu-item group">
+              Tickets
+              <ul
+                class="absolute top-full right-0 hidden rounded-b-md bg-pink-500 text-right whitespace-nowrap group-hover:block"
+              >
+                <li
+                  class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  Single day ticket
+                </li>
+                <li
+                  class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                >
+                  7 day ticket
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <span>Support</span>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </main>
     <script type="module">
       import "/index.ts";
       import "/assets/fontawesome/js/fontawesome.min.js";
